@@ -1,9 +1,14 @@
+// libraries
 import axios from 'axios';
 import { createContext } from 'react';
 import { useEffect, useState } from 'react';
+
+// Components
 import Popup from './Popup';
 import PopupContent from './PopupContent';
 import Search from './Search';
+
+// Styles
 import styles from './styles/Items.module.css';
 
 export const SearchContext = createContext();
@@ -12,13 +17,12 @@ const Items = () => {
     const [searchValue, setSearchValue] = useState('');
     const [popupActive, setPopupActive] = useState(false);
     const [users, setUsers] = useState([]);
-    const [usersIndex, setUsersIndex] = useState();
-    console.log(popupActive);
+    const [usersIndex, setUsersIndex] = useState(); // get index of card
+
     useEffect(() => {
-        let cards = document.querySelectorAll('#cards');
+        let cards = document.querySelectorAll('#cards'); // get element crd for click
         cards.forEach((card, i) => {
             card.addEventListener('click', () => {
-                console.log(i);
                 setUsersIndex(i);
                 setPopupActive(true);
             });
@@ -32,6 +36,7 @@ const Items = () => {
             .then((arr) => setUsers(arr.data));
     }, [searchValue]);
 
+    // sorted users of query response
     const usersData = users.filter((obj) => {
         if (obj.name.toLowerCase().includes(searchValue.toLowerCase())) {
             return true;

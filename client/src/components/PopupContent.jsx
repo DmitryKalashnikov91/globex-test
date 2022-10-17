@@ -9,7 +9,9 @@ const PopupContent = ({ users, usersIndex }) => {
                     <label>Телефон:</label>
                     <p>{users[usersIndex].phone}</p>
                     <label>Почта:</label>
-                    <p>{users[usersIndex].email}</p>
+                    <p>
+                        <a href={`mailto:${users[usersIndex].email}`}>{users[usersIndex].email}</a>
+                    </p>
                     <label>Дата приема:</label>
                     <p>{users[usersIndex].hire_date}</p>
                     <label>Должность:</label>
