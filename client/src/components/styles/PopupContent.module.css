@@ -1,0 +1,23 @@
+
+
+.table p {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 5px 0 0;
+    margin-top: 10px;
+    
+}
+
+.table {
+    display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(4, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+
+}
+label {
+    font-weight: 700;
+}

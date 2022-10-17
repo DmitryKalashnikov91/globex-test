@@ -1,0 +1,29 @@
+.search {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgba(84, 82, 82, 0.1);
+    height: 40px;
+    border-radius: 15px;
+    caret-color: transparent;
+}
+.input {
+    border: none;
+  outline: none;
+  margin-left: 10px;
+    width: 90%;
+    height: 100%;
+    caret-color: auto;
+    font-size: 20px;
+}
+.input::-ms-clear,
+.input::-ms-reveal {
+    display: none;
+    width : 0;
+    height: 0;
+}
+.btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 20px;
+}
